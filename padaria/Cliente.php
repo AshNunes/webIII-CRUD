@@ -106,13 +106,14 @@ class Cliente {
         return false;
     }
 
-    public function consultar(){
-        $query = "SELECT * FROM cliente WHERE id_cliente=:id";
+    public function consultar() {
+        $query = "SELECT * FROM cliente WHERE id_cliente = :id";
         $stmt = $this->conexao->prepare($query);
         $stmt->bindParam(":id", $this->id);
         $stmt->execute();
-        
+    
         return $stmt;
     }
+    
 }
 ?>
